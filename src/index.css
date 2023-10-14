@@ -1,13 +1,42 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden;
+}
+::-webkit-scrollbar{
+    width: 5px;
+    background-color: rgb(172, 171, 171);
+}
+::-webkit-scrollbar-thumb{
+    background-color: orangered;
+    border-radius: 5px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+@layer components {
+    .herosectionGrid{
+        @apply max-w-[1440px] m-auto grid grid-cols-2 max-xl:grid-cols-1 justify-between items-center pb-12
+    }
+    .herosectionH1{
+        @apply  font-semibold leading-[100px] mt-14 text-8xl whitespace-nowrap relative z-10 max-xl:whitespace-pre-wrap  max-md:text-7xl max-md:leading-[80px]
+    }
+    .button{
+        @apply  bg-orange-500 text-white flex justify-center items-center py-3 px-7 rounded-full text-lg gap-2 cursor-pointer
+    }
+    .buttonNoBg{
+        @apply text-slate-500 border border-slate-400 flex justify-center items-center py-3 px-7 rounded-full text-lg gap-2 cursor-pointer
+    }
+   
 }
